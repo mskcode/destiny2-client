@@ -20,6 +20,19 @@ corepack enable
 corepack install
 ```
 
+Generate certificates for HTTPS using
+[mkcert](https://github.com/FiloSottile/mkcert) tool
+
+```shell
+mkcert -install            # install local CA
+mkdir certs && cd certs    # create certs directory
+mkcert localhost           # create localhost certificate
+```
+
+Alternatively when you have previously generated certs already, just copy them
+(`localhost-key.pem` for key and `localhost.pem` for cert) to the `certs`
+directory.
+
 Install dependencies and start the development server
 
 ```shell
@@ -28,7 +41,7 @@ pnpm start
 ```
 
 Point your browser to
-[http://localhost:3000](http://localhost:3000).
+[https://localhost:3000](https://localhost:3000).
 
 ## Destiny 2 API
 

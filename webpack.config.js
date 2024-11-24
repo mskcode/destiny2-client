@@ -15,6 +15,13 @@ module.exports = {
     static: {
       directory: path.join(__dirname, "dist"),
     },
+    server: {
+      type: "https",
+      options: {
+        key: "./certs/localhost-key.pem",
+        cert: "./certs/localhost.pem",
+      },
+    },
     compress: false,
     port: 3000,
     hot: true,
