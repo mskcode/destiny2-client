@@ -66,6 +66,12 @@ export const Debug: React.FC<DebugProps> = ({
   showLocalStorage = false,
   showSearchParams = false,
 }: DebugProps): JSX.Element => {
+  const showNothing = !showCookies && !showLocalStorage && !showSearchParams;
+
+  if (showNothing) {
+    return <></>;
+  }
+
   return (
     <div className="flex">
       {showCookies && (

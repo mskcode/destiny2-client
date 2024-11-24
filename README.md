@@ -74,3 +74,8 @@ curl \
   --header 'X-API-Key: <api_key>' \
   'https://www.bungie.net/Platform/App/FirstParty/'
 ```
+
+### OAuth 2.0
+
+Bungie.net supports a subset of OAuth 2.0. Read the
+[full documentation](https://github.com/Bungie-net/api/wiki/OAuth-Documentation).

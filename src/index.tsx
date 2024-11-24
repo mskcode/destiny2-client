@@ -4,8 +4,8 @@ import { BrowserRouter, Route, Routes } from "react-router";
 
 import React from "react";
 import { App } from "./App";
-import { Login } from "./Login";
 
+import { OAuthCallback } from "./OAuthCallback";
 import "./style.css";
 
 const rootElement = document.getElementById("root");
@@ -14,7 +14,7 @@ ReactDOM.createRoot(rootElement!).render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="login" element={<Login />} />
+        <Route path="oauth" element={<OAuthCallback />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
