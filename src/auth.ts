@@ -1,5 +1,5 @@
 const OAUTH_AUTHORIZE_URL = "https://www.bungie.net/en/oauth/authorize";
-const OAUTH_CLIENT_ID = "invalid"; // TODO read from the environment
+const OAUTH_CLIENT_ID = $D2C_OAUTH_CLIENT_ID;
 
 export const buildAuthorizationUrl = () => {
   const state = globalThis.crypto.randomUUID();

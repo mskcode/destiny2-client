@@ -1,5 +1,10 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { DefinePlugin } = require("webpack");
+const dotenv = require("dotenv");
+
+// load .env file
+dotenv.config();
 
 //
 // Since we want to do everything client-side without any server
@@ -60,6 +65,15 @@ module.exports = {
     // https://github.com/jantimon/html-webpack-plugin#options
     new HtmlWebpackPlugin({
       template: "./src/index.html",
+    }),
+
+    // https://webpack.js.org/plugins/define-plugin/
+    new DefinePlugin({
+      $D2C_API_KEY: JSON.stringify(process.env.D2C_API_KEY),
+      $D2C_OAUTH_CLIENT_ID: JSON.stringify(process.env.D2C_OAUTH_CLIENT_ID),
+      $D2C_OAUTH_CLIENT_SECRET: JSON.stringify(
+        process.env.D2C_OAUTH_CLIENT_SECRET,
+      ),
     }),
   ],
 };

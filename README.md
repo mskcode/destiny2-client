@@ -33,6 +33,9 @@ Alternatively when you have previously generated certs already, just copy them
 (`localhost-key.pem` for key and `localhost.pem` for cert) to the `certs`
 directory.
 
+Copy `.env_sample` to `.env` and populate it as instructed below in the
+[Registering API client](#registering-api-client) section.
+
 Install dependencies and start the development server
 
 ```shell
@@ -47,9 +50,7 @@ Point your browser to
 
 [https://bungie-net.github.io/](https://bungie-net.github.io/)
 
-### API Key
-
-Header `X-API-Key` is used to authenticate the client doing the request.
+### Registering API client
 
 Clients are registered at
 [https://www.bungie.net/en/Application](https://www.bungie.net/en/Application).
@@ -66,6 +67,9 @@ When creating a new application:
 -   Scope: All except _Administrate groups and clans for which you are a founder
     or administrator._
 -   Origin Header: `https://localhost:3000/`
+
+Save the API key and OAuth client ID and secret to the `.env` file (see
+`.env_sample` for format).
 
 Once you have the API-key you can test if it works by running:
 
