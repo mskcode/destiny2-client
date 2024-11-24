@@ -6,6 +6,8 @@ import React from "react";
 import { App } from "./App";
 import { Login } from "./Login";
 
+import "./style.css";
+
 const rootElement = document.getElementById("root");
 ReactDOM.createRoot(rootElement!).render(
   <React.StrictMode>

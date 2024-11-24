@@ -67,19 +67,19 @@ export const Debug: React.FC<DebugProps> = ({
   showSearchParams = false,
 }: DebugProps): JSX.Element => {
   return (
-    <div>
+    <div className="flex">
       {showCookies && (
-        <div>
+        <div className="flex-1">
           <Cookies />
         </div>
       )}
       {showLocalStorage && (
-        <div>
+        <div className="flex-1">
           <LocalStorage />
         </div>
       )}
       {showSearchParams && (
-        <div>
+        <div className="flex-1">
           <SearchParams />
         </div>
       )}

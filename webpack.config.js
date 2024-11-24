@@ -10,6 +10,17 @@ module.exports = {
   entry: "./src/index.tsx",
   devtool: "inline-source-map",
 
+  // https://webpack.js.org/configuration/dev-server/
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "dist"),
+    },
+    compress: false,
+    port: 3000,
+    hot: true,
+    historyApiFallback: true,
+  },
+
   // https://webpack.js.org/concepts/output/
   output: {
     filename: "bundle.js",
@@ -28,18 +39,12 @@ module.exports = {
         use: "ts-loader",
         exclude: /node_modules/,
       },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader", "postcss-loader"],
+        include: path.resolve(__dirname, "src"),
+      },
     ],
-  },
-
-  // https://webpack.js.org/configuration/dev-server/
-  devServer: {
-    static: {
-      directory: path.join(__dirname, "dist"),
-    },
-    compress: false,
-    port: 3000,
-    hot: true,
-    historyApiFallback: true,
   },
 
   // https://webpack.js.org/configuration/plugins/

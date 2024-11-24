@@ -1,11 +1,10 @@
 import React from "react";
-import { Debug } from "./Debug";
+import { Header } from "./Header";
 
 export const App: React.FC = (): JSX.Element => {
   return (
     <main>
-      <Debug showCookies showLocalStorage showSearchParams />
-      <h1>Title</h1>
+      <Header />
     </main>
   );
 };

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-type SetFunction<T> = (value: T) => void;
+type SetFunction<T> = React.Dispatch<React.SetStateAction<T>>;
 type StorageFunction = <T>(key: string, initialValue: T) => [T, SetFunction<T>];
 
 export const useLocalStorage: StorageFunction = <T = any>(
