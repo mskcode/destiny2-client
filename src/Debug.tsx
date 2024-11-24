@@ -20,10 +20,7 @@ const Cookies: React.FC = (): JSX.Element => {
 };
 
 const LocalStorage: React.FC = (): JSX.Element => {
-  const [location, setLocation] = useLocalStorage<any>(
-    "location-storage",
-    null,
-  );
+  const [location] = useLocalStorage<any>("location-storage", null);
   return (
     <>
       <h3>Local Storage</h3>
